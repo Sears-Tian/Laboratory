@@ -5,7 +5,7 @@
 #include <ctime>
 #include <cmath>
 #include <iomanip>
-using namespace std;
+//using namespace std;
 
 Game::Game()
 {

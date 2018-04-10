@@ -5,10 +5,10 @@
 	作    者：田继辉 (st.tian@foxmail.com)
 	设计时间：2018.04.10 15:34 - 04.11 04:25
 */
-#include <iostream>
+//#include <iostream>
 //#include <cstdlib>
 #include "Game.h"
-using namespace std;
+//using namespace std;
 
 int main()
 {
@@ -28,6 +28,5 @@ int main()
 		system("pause");
 		system("cls");
 	}
-	//system("pause");
 	return 0;
 }
