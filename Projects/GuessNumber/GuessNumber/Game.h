@@ -32,7 +32,7 @@ public:
 	void	setRand(int rand);
 	int		getNumber()	const;
 	void	setNumber(int number);
-	
+
 	//菜单提示。返回输入字符
 	char MenuHint();
 	//猜数字。返回猜测的数字

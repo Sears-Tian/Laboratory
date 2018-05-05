@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DiskScan.cpp">
+    <ClCompile Include="20121221.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
