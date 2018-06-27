@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="express_my_heart.cpp">
+    <ClCompile Include="body_fat_rate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
