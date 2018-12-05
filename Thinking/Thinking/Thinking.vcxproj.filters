@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="body_fat_rate.cpp">
+    <ClCompile Include="20121222_not0_struct-Date.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
