@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main_chars_convert.cpp">
+    <ClCompile Include="CharsConvert.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CharsConvert.cpp">
+    <ClCompile Include="main_string_value.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

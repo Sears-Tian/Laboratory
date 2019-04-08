@@ -15,8 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="main_love_cute.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Love.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="fire\title.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="fire\flower.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="fire\shoot.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="fire\bomb.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="fire\shoot.mp3" />
+    <Media Include="fire\小幸运.mp3" />
   </ItemGroup>
 </Project>

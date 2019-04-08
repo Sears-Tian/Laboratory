@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="20121222_not0_struct-Date.cpp">
+    <ClCompile Include="vector_vector_string.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
