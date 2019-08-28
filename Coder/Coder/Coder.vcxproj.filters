@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="arrangement_combination.cpp">
+    <ClCompile Include="rank-dynamic_programming.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
