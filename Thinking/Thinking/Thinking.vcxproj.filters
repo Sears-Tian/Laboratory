@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="arrangement_combination.cpp">
+    <ClCompile Include="knuth-durstenfeld_shuffle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
