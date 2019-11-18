@@ -1,6 +1,7 @@
 #pragma once
 
-#include <vector>
+#include <queue>
+#include <iomanip>
 #include "Node.h"
 #include "Edge.h"
 
@@ -14,7 +15,7 @@ public:
 	// 向图中加入顶点（结点）
 	bool AddNode(Node* pNode);
 	// 重置顶点
-	void ResettNode();
+	void ResetNode();
 	// 为无向图设置邻接矩阵
 	bool SetValueToMatrixForDirectedGraph(int row, int col, int val = 1);
 	// 为有向图设置邻接矩阵
@@ -28,7 +29,11 @@ public:
 	// 深度优先遍历
 	void DepthFirstSearch(int indexNode);
 	// 广度优先遍历
-	void BreadthFirstSeatch(int indexNode);
+	void BreadthFirstSearch(int indexNode);
+
+	// 多源最短路径
+	static void Floyd(int** matrix, int n);
+
 
 	// 最小生成树算法：Prim
 	void PrimTree(int indexNode/*, const string* alpha*/);
@@ -38,9 +43,6 @@ public:
 private:
 	// 从矩阵中获取权值
 	bool GetValueFromMatrix(int row, int col, int& val);
-
-	// 广度优先遍历实现函数
-	void BreadthFirstSearchImpl(vector<int>& vecPre);
 
 	// 从可选边集合中找到最小的边
 	int GetMinEdge(vector<Edge>& vecEdge);

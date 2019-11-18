@@ -30,7 +30,7 @@ bool Graph::AddNode(Node * pNode)
 	return true;
 }
 
-void Graph::ResettNode()
+void Graph::ResetNode()
 {
 	for (int index = 0; index < m_iNodeCount; index++)
 		m_pNodeArray[index].m_isVisited = false;
@@ -82,39 +82,63 @@ void Graph::PrintMatrix()
 
 void Graph::DepthFirstSearch(int indexNode)
 {
-	int value = 0; 
 	// 输出当前结点，并设置状态为已访问
 	cout << m_pNodeArray[indexNode].m_data << " ";
 	m_pNodeArray[indexNode].m_isVisited = true;
 
 	// 通过邻接矩阵判断是否与其它的定点有连接
+	int value = 0;
 	for (int index = 0; index < m_iCapacity; index++)
 	{
 		this->GetValueFromMatrix(indexNode, index, value);
 		// 判断连接边的顶点和点访问
 		if(value != 0 && !m_pNodeArray[index].m_isVisited)
 			this->DepthFirstSearch(index);
-		//// 判断有边连接其它顶点
-		//if (value != 0)
-		//{
-		//	// 判断该点没有被访问过
-		//	if (!m_pNodeArray[index].m_isVisited)
-		//	{
-		//		this->DepthFirstSearch(index);
-		//	}
-		//}
 	}
 }
 
-void Graph::BreadthFirstSeatch(int indexNode)
+void Graph::BreadthFirstSearch(int indexNode)
 {
 	cout << m_pNodeArray[indexNode].m_data << " ";
 	m_pNodeArray[indexNode].m_isVisited = true;
 
-	vector<int> vecCur;
-	vecCur.push_back(indexNode);
+	int value = 0;
+	queue<int> que;
+	que.push(indexNode);
+	while (!que.empty())
+	{
+		int front = que.front();
+		que.pop();
+		for (int index = 0; index < m_iCapacity; index++)
+		{
+			this->GetValueFromMatrix(front, index, value);
+			if (value != 0 && !m_pNodeArray[index].m_isVisited)
+			{
+				cout << m_pNodeArray[index].m_data << " ";
+				m_pNodeArray[index].m_isVisited = true;
+				que.push(index);
+			}
+		}
+	}
+}
 
-	this->BreadthFirstSearchImpl(vecCur);
+void Graph::Floyd(int ** matrix, int n)
+{
+	for (int k = 0; k < n; k++)
+		for (int i = 0; i < n; i++)
+			for (int j = 0; j < n; j++)
+			{
+				if (matrix[i][k] == -1 || matrix[k][j] == -1)
+					continue;
+				matrix[i][j] = std::min(matrix[i][j], matrix[i][k] + matrix[k][j]);
+			}
+
+	for (int a = 0; a < n; a++)
+	{
+		for (int b = 0; b < n; b++)
+			cout << setw(2) << matrix[a][b] << " ";
+		cout << endl;
+	}
 }
 
 void Graph::PrimTree(int indexNode/*, const string* alpha*/)
@@ -265,28 +289,6 @@ bool Graph::GetValueFromMatrix(int row, int col, int& val)
 
 	val = m_pMatrix[row * m_iCapacity + col];
 	return true;
-}
-
-void Graph::BreadthFirstSearchImpl(vector<int>& vecPre)
-{
-	int value = 0; 
-	vector<int> vecCur;
-
-	int size = (int)vecPre.size();
-	for(int i = 0; i < size; i++)
-		for (int j = 0; j < m_iCapacity; j++)
-		{
-			this->GetValueFromMatrix(vecPre[i], j, value);
-			if (value != 0 && !m_pNodeArray[j].m_isVisited)
-			{
-				cout << m_pNodeArray[j].m_data << " ";
-				m_pNodeArray[j].m_isVisited = true;
-				vecCur.push_back(j);
-			}
-		}
-
-	if (vecCur.size() != 0)
-		this->BreadthFirstSearchImpl(vecCur);
 }
 
 int Graph::GetMinEdge(vector<Edge>& vecEdge)
